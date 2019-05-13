@@ -54,6 +54,12 @@
 #define configUSE_16_BIT_TICKS					0
 #define configIDLE_SHOULD_YIELD					1
 #define configUSE_CO_ROUTINES 					0
+
+ /* Currently the TCP/IP stack is using dynamic allocation, and the MQTT task is
+  * using static allocation. */
+#define configSUPPORT_DYNAMIC_ALLOCATION        1
+#define configSUPPORT_STATIC_ALLOCATION         1
+
 #define configUSE_MUTEXES						1
 #define configUSE_RECURSIVE_MUTEXES				1
 #define configQUEUE_REGISTRY_SIZE				0
@@ -121,6 +127,22 @@ functions. */
 
 
 /* Application specific definitions follow. **********************************/
+
+	/* The function that implements FreeRTOS printf style output, and the macro
+ * that maps the configPRINTF() macros to that function. */
+extern void vLoggingPrintf(const char* pcFormat,
+		...);
+	/*#define configPRINTF( X )    vLoggingPrintf X */
+#define configPRINTF( X )    printf X
+
+/* Non-format version thread-safe print */
+	extern void vLoggingPrint(const char* pcMessage);
+#define configPRINT( X )    vLoggingPrint( X )
+
+	/* Map the logging task's printf to the board specific output function. */
+#include <stdio.h>
+#define configPRINT_STRING( X )    printf( X ); /* FIX ME: Change to your devices console print acceptance function. */
+
 
 /* If configINCLUDE_DEMO_DEBUG_STATS is set to one, then a few basic IP trace
 macros are defined to gather some UDP stack statistics that can then be viewed

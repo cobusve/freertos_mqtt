@@ -33,6 +33,72 @@
     <Filter Include="DemoTasks">
       <UniqueIdentifier>{b71e974a-9f28-4815-972b-d930ba8a34d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules">
+      <UniqueIdentifier>{a96a5105-6e48-4cf8-9ba2-9f0c3d632d64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries">
+      <UniqueIdentifier>{1dc3a522-c01d-4b5a-8240-304cb4c163f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\ports">
+      <UniqueIdentifier>{0392c103-1056-4133-920c-b93cde864fdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\ports\freertos_plus_tcp">
+      <UniqueIdentifier>{cf31d226-37d3-4b3f-a546-01d0163db7f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\ports\freertos_plus_tcp\src">
+      <UniqueIdentifier>{69e94048-488f-4ab6-a14e-5c90d2b392e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\ports\freertos_plus_tcp\include">
+      <UniqueIdentifier>{6565411d-4c9b-490f-815b-721b62b1cbb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard">
+      <UniqueIdentifier>{1efb160e-6c53-4712-9fc2-64fa36b0e547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\common">
+      <UniqueIdentifier>{12baa132-a908-4368-b6a6-a6002bb0d565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\mqtt">
+      <UniqueIdentifier>{c655d977-5011-4282-8416-0fc4f8600ccb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\common\include">
+      <UniqueIdentifier>{f65edff7-f4d1-410a-82e3-733e616a34fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\common\platform">
+      <UniqueIdentifier>{44a240c2-de9a-4608-828e-938ee29c0bdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\common\logging">
+      <UniqueIdentifier>{9efcd348-9b0a-4a5b-a285-bf2c0d81809f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\common\taskpool">
+      <UniqueIdentifier>{7c50bf93-ee18-4e8e-b35b-8199440bda56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\mqtt\src">
+      <UniqueIdentifier>{c6bef45d-a0f2-4cd0-9676-b080cfa50fbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\mqtt\include">
+      <UniqueIdentifier>{108c1b54-fd47-483a-9800-f601f61c9096}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\mqtt\include\types">
+      <UniqueIdentifier>{67ae253b-e751-4c78-b797-33b5db90d2d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\mqtt\src\private">
+      <UniqueIdentifier>{1e587756-7d9f-4a9f-9f86-9ab871233df1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\common\include\private">
+      <UniqueIdentifier>{98a38cd4-b88e-4d8a-89c5-1dd56c6b5844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DemoRunner">
+      <UniqueIdentifier>{af988b95-f8e8-45aa-a664-b17a42af95f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetworkManager">
+      <UniqueIdentifier>{70da8949-4d05-4c01-8e04-2f580f21dca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DemoTasks\config">
+      <UniqueIdentifier>{b0928da9-f99e-44b8-a333-4732efda8600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DemoTasks\include">
+      <UniqueIdentifier>{3c59cb93-24cc-4086-b5a5-d7514bc9b478}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\FreeRTOS\Source\portable\MSVC-MingW\port.c">
@@ -99,6 +165,69 @@
     <ClCompile Include="demo_logging.c" />
     <ClCompile Include="DemoTasks\SimpleTCPEchoServer.c">
       <Filter>DemoTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\ports\secure_sockets\freertos_plus_tcp\aws_secure_sockets.c">
+      <Filter>modules\ports\freertos_plus_tcp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_operation.c">
+      <Filter>modules\libraries\standard\mqtt\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_serialize.c">
+      <Filter>modules\libraries\standard\mqtt\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_subscription.c">
+      <Filter>modules\libraries\standard\mqtt\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_validate.c">
+      <Filter>modules\libraries\standard\mqtt\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\aws_mqtt_agent.c">
+      <Filter>modules\libraries\standard\mqtt\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_api.c">
+      <Filter>modules\libraries\standard\mqtt\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_network.c">
+      <Filter>modules\libraries\standard\mqtt\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\taskpool\iot_taskpool.c">
+      <Filter>modules\libraries\standard\common\taskpool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\logging\iot_logging.c">
+      <Filter>modules\libraries\standard\common\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\platform\iot_network_afr.c">
+      <Filter>modules\libraries\standard\common\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\platform\iot_threads_afr.c">
+      <Filter>modules\libraries\standard\common\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\platform\iot_clock_afr.c">
+      <Filter>modules\libraries\standard\common\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="DemoTasks\iot_demo_mqtt.c">
+      <Filter>DemoTasks</Filter>
+    </ClCompile>
+    <ClCompile Include="demo_runner\aws_demo_version.c">
+      <Filter>DemoRunner</Filter>
+    </ClCompile>
+    <ClCompile Include="demo_runner\iot_demo_afr.c">
+      <Filter>DemoRunner</Filter>
+    </ClCompile>
+    <ClCompile Include="demo_runner\iot_demo_runner.c">
+      <Filter>DemoRunner</Filter>
+    </ClCompile>
+    <ClCompile Include="demo_runner\aws_demo.c">
+      <Filter>DemoRunner</Filter>
+    </ClCompile>
+    <ClCompile Include="network_manager\aws_iot_demo_network.c">
+      <Filter>NetworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="network_manager\aws_iot_network_manager.c">
+      <Filter>NetworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\iot_init.c">
+      <Filter>modules\libraries\standard\common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +301,135 @@
     </ClInclude>
     <ClInclude Include="..\..\..\FreeRTOS\Source\include\projdefs.h">
       <Filter>FreeRTOS\Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\ports\secure_sockets\include\aws_secure_sockets.h">
+      <Filter>modules\ports\freertos_plus_tcp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\ports\secure_sockets\include\aws_secure_sockets_config_defaults.h">
+      <Filter>modules\ports\freertos_plus_tcp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\ports\secure_sockets\include\aws_secure_sockets_wrapper_metrics.h">
+      <Filter>modules\ports\freertos_plus_tcp\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_init.h">
+      <Filter>modules\libraries\standard\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_json_utils.h">
+      <Filter>modules\libraries\standard\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_linear_containers.h">
+      <Filter>modules\libraries\standard\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_logging_setup.h">
+      <Filter>modules\libraries\standard\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_taskpool.h">
+      <Filter>modules\libraries\standard\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\aws_appversion32.h">
+      <Filter>modules\libraries\standard\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\aws_json_utils.h">
+      <Filter>modules\libraries\standard\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\aws_logging_task.h">
+      <Filter>modules\libraries\standard\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_atomic.h">
+      <Filter>modules\libraries\standard\common\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\types\iot_mqtt_types.h">
+      <Filter>modules\libraries\standard\mqtt\include\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\aws_mqtt_agent_config_defaults.h">
+      <Filter>modules\libraries\standard\mqtt\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\aws_mqtt_config_defaults.h">
+      <Filter>modules\libraries\standard\mqtt\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\aws_mqtt_lib.h">
+      <Filter>modules\libraries\standard\mqtt\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\iot_mqtt.h">
+      <Filter>modules\libraries\standard\mqtt\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\aws_mqtt_agent.h">
+      <Filter>modules\libraries\standard\mqtt\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\src\private\iot_mqtt_internal.h">
+      <Filter>modules\libraries\standard\mqtt\src\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\aws_lib_init.h">
+      <Filter>modules\libraries\standard\common\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\iot_error.h">
+      <Filter>modules\libraries\standard\common\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\iot_logging.h">
+      <Filter>modules\libraries\standard\common\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\iot_static_memory.h">
+      <Filter>modules\libraries\standard\common\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\aws_default_root_certificates.h">
+      <Filter>modules\libraries\standard\common\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\aws_doubly_linked_list.h">
+      <Filter>modules\libraries\standard\common\include\private</Filter>
+    </ClInclude>
+    <ClInclude Include="network_manager\iot_network_manager_private.h">
+      <Filter>NetworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="aws_clientcredential.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="aws_clientcredential_keys.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="aws_demo.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="aws_iot_network_config.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="iot_demo_runner.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="iot_config.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\include\SimpleTCPEchoServer.h">
+      <Filter>DemoTasks\include</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\include\SimpleUDPClientAndServer.h">
+      <Filter>DemoTasks\include</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\include\TCPEchoClient_SingleTasks.h">
+      <Filter>DemoTasks\include</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\include\iot_demo_logging.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\config\aws_mqtt_agent_config.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\config\aws_mqtt_config.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\config\aws_secure_sockets_config.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\config\iot_config_common.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\config\aws_application_version.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\config\aws_demo_config.h">
+      <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTasks\config\aws_iot_demo_network.h">
+      <Filter>DemoTasks\config</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

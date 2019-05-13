@@ -57,7 +57,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Source\FreeRTOS-Plus-FAT\include;..\..\Source\FreeRTOS-Plus-FAT\portable\common;..\..\Source\FreeRTOS-Plus-TCP\protocols\include;..\..\Source\FreeRTOS-Plus-TCP\portable\BufferManagement;.\DemoTasks\include;..\..\Source\FreeRTOS-Plus-TCP\portable\Compiler\MSVC;.\WinPCap;..\..\..\FreeRTOS\Source\include;..\..\..\FreeRTOS\Source\portable\MSVC-MingW;..\..\Source\FreeRTOS-Plus-CLI;.\TraceMacros\Example1;..\..\Source\FreeRTOS-Plus-TCP\include;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\DemoTasks\include;.\DemoTasks\config;..\..\..\FreeRTOS\Source\include;..\..\..\FreeRTOS\Source\portable\MSVC-MingW;..\..\Source\FreeRTOS-Plus-FAT\include;..\..\Source\FreeRTOS-Plus-FAT\portable\common;..\..\Source\FreeRTOS-Plus-TCP\protocols\include;..\..\Source\FreeRTOS-Plus-TCP\portable\BufferManagement;..\..\Source\FreeRTOS-Plus-TCP\portable\Compiler\MSVC;..\..\Source\FreeRTOS-Plus-TCP\include;..\..\Source\FreeRTOS-Plus-CLI;.\WinPCap;.\TraceMacros\Example1;.;..\..\Source\modules\ports\secure_sockets\include;..\..\Source\modules\libraries\standard\common\include\private;..\..\Source\modules\libraries\standard\common\include;..\..\Source\modules\libraries\standard\mqtt\include;.\network_manager;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_WIN32_WINNT=0x0500;WINVER=0x400;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -154,15 +154,36 @@
     <ClCompile Include="..\..\Source\FreeRTOS-Plus-TCP\FreeRTOS_UDP_IP.c" />
     <ClCompile Include="..\..\Source\FreeRTOS-Plus-TCP\portable\BufferManagement\BufferAllocation_2.c" />
     <ClCompile Include="..\..\Source\FreeRTOS-Plus-TCP\portable\NetworkInterface\WinPCap\NetworkInterface.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\iot_init.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\logging\iot_logging.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\platform\iot_clock_afr.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\platform\iot_network_afr.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\platform\iot_threads_afr.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\common\taskpool\iot_taskpool.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\aws_mqtt_agent.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_api.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_network.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_operation.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_serialize.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_subscription.c" />
+    <ClCompile Include="..\..\Source\modules\libraries\standard\mqtt\src\iot_mqtt_validate.c" />
+    <ClCompile Include="..\..\Source\modules\ports\secure_sockets\freertos_plus_tcp\aws_secure_sockets.c" />
+    <ClCompile Include="DemoTasks\iot_demo_mqtt.c" />
     <ClCompile Include="DemoTasks\SimpleTCPEchoServer.c" />
     <ClCompile Include="DemoTasks\TCPEchoClient_SingleTasks.c" />
     <ClCompile Include="DemoTasks\SimpleUDPClientAndServer.c" />
     <ClCompile Include="demo_logging.c" />
+    <ClCompile Include="demo_runner\aws_demo.c" />
+    <ClCompile Include="demo_runner\aws_demo_version.c" />
+    <ClCompile Include="demo_runner\iot_demo_afr.c" />
+    <ClCompile Include="demo_runner\iot_demo_runner.c" />
     <ClCompile Include="main.c">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="network_manager\aws_iot_demo_network.c" />
+    <ClCompile Include="network_manager\aws_iot_network_manager.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\FreeRTOS\Source\include\event_groups.h" />
@@ -188,8 +209,51 @@
     <ClInclude Include="..\..\Source\FreeRTOS-Plus-TCP\include\IPTraceMacroDefaults.h" />
     <ClInclude Include="..\..\Source\FreeRTOS-Plus-TCP\include\NetworkBufferManagement.h" />
     <ClInclude Include="..\..\Source\FreeRTOS-Plus-TCP\include\NetworkInterface.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\aws_appversion32.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\aws_json_utils.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\aws_logging_task.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_atomic.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_init.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_json_utils.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_linear_containers.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_logging_setup.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\iot_taskpool.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\aws_default_root_certificates.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\aws_doubly_linked_list.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\aws_lib_init.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\iot_error.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\iot_logging.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\private\iot_static_memory.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\aws_mqtt_agent.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\aws_mqtt_agent_config_defaults.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\aws_mqtt_config_defaults.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\aws_mqtt_lib.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\iot_mqtt.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\include\types\iot_mqtt_types.h" />
+    <ClInclude Include="..\..\Source\modules\libraries\standard\mqtt\src\private\iot_mqtt_internal.h" />
+    <ClInclude Include="..\..\Source\modules\ports\secure_sockets\include\aws_secure_sockets.h" />
+    <ClInclude Include="..\..\Source\modules\ports\secure_sockets\include\aws_secure_sockets_config_defaults.h" />
+    <ClInclude Include="..\..\Source\modules\ports\secure_sockets\include\aws_secure_sockets_wrapper_metrics.h" />
+    <ClInclude Include="aws_clientcredential.h" />
+    <ClInclude Include="aws_clientcredential_keys.h" />
+    <ClInclude Include="aws_demo.h" />
+    <ClInclude Include="aws_iot_network_config.h" />
+    <ClInclude Include="DemoTasks\config\aws_application_version.h" />
+    <ClInclude Include="DemoTasks\config\aws_demo_config.h" />
+    <ClInclude Include="DemoTasks\config\aws_iot_demo_network.h" />
+    <ClInclude Include="DemoTasks\config\aws_mqtt_agent_config.h" />
+    <ClInclude Include="DemoTasks\config\aws_mqtt_config.h" />
+    <ClInclude Include="DemoTasks\config\aws_secure_sockets_config.h" />
+    <ClInclude Include="DemoTasks\config\iot_config_common.h" />
+    <ClInclude Include="DemoTasks\include\iot_demo_logging.h" />
+    <ClInclude Include="DemoTasks\include\SimpleTCPEchoServer.h" />
+    <ClInclude Include="DemoTasks\include\SimpleUDPClientAndServer.h" />
+    <ClInclude Include="DemoTasks\include\TCPEchoClient_SingleTasks.h" />
     <ClInclude Include="FreeRTOSConfig.h" />
     <ClInclude Include="FreeRTOSIPConfig.h" />
+    <ClInclude Include="iot_config.h" />
+    <ClInclude Include="iot_demo_runner.h" />
+    <ClInclude Include="network_manager\iot_network_manager_private.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
