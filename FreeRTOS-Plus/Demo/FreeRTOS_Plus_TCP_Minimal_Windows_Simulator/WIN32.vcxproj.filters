@@ -99,6 +99,12 @@
     <Filter Include="DemoTasks\include">
       <UniqueIdentifier>{3c59cb93-24cc-4086-b5a5-d7514bc9b478}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules\libraries\standard\common\include\types">
+      <UniqueIdentifier>{c34723bf-98c8-4037-83a4-5eddfd5205bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modules\libraries\standard\common\include\platform">
+      <UniqueIdentifier>{1ffbe587-2ff2-49ee-b292-cdbf2bf0dab3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\FreeRTOS\Source\portable\MSVC-MingW\port.c">
@@ -430,6 +436,36 @@
     </ClInclude>
     <ClInclude Include="DemoTasks\config\aws_iot_demo_network.h">
       <Filter>DemoTasks\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\types\iot_network_types.h">
+      <Filter>modules\libraries\standard\common\include\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\types\iot_platform_types.h">
+      <Filter>modules\libraries\standard\common\include\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\types\iot_taskpool_types.h">
+      <Filter>modules\libraries\standard\common\include\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\platform\iot_network_ble.h">
+      <Filter>modules\libraries\standard\common\include\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\platform\iot_threads.h">
+      <Filter>modules\libraries\standard\common\include\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\platform\iot_platform_types_afr.h">
+      <Filter>modules\libraries\standard\common\include\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\platform\iot_clock.h">
+      <Filter>modules\libraries\standard\common\include\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\platform\iot_network_afr.h">
+      <Filter>modules\libraries\standard\common\include\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\platform\iot_metrics.h">
+      <Filter>modules\libraries\standard\common\include\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\modules\libraries\standard\common\include\platform\iot_network.h">
+      <Filter>modules\libraries\standard\common\include\platform</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
